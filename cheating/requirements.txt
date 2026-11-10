@@ -1,0 +1,15 @@
+# Extra dependencies of the cheating setting, on top of the top-level requirements.txt.
+#
+#   pip install -r requirements.txt -r cheating/requirements.txt
+
+# The masking scorer runs the agent's final test with `python -m pytest`. The container image pins its own pytest
+# (see docker/Dockerfile).
+pytest==9.1.1
+
+# ImpossibleBench only.
+inspect-ai==0.3.218
+swebench==4.0.5
+datasets==3.6.0
+docker==7.1.0
+
+# GPT models on ImpossibleBench need openai==2.54.0 instead of the top-level 3.x, in a separate environment.
